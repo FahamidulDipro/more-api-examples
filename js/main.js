@@ -4,7 +4,7 @@ const loadComments = () => {
 
 const showComments = comments => {
     const commentSection = document.getElementById('comments');
-    for (const comment of comments) {
+    comments.forEach(comment => {
         const div = document.createElement('div');
         div.classList.add('comment');
         div.innerHTML = `
@@ -15,7 +15,8 @@ const showComments = comments => {
         `;
         commentSection.appendChild(div);
         console.log(comment);
-    }
+    });
+
 }
 
 document.getElementById('show-comment').addEventListener('click', loadComments);
